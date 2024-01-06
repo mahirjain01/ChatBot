@@ -18,7 +18,7 @@ llm = HuggingFaceHub(
     repo_id = repo_id, model_kwargs = {"temperature" : 0, "max_length": 512}
 )
 
-st.title("Tiku BKL🦜")
+st.title("Chat with your document🦜")
 
 uploaded_file = st.sidebar.file_uploader("Upload your Data", type="csv")
 
@@ -47,10 +47,10 @@ if uploaded_file :
         st.session_state['history'] = []
 
     if 'generated' not in st.session_state:
-        st.session_state['generated'] = ["Kuch bhi pucho about " + uploaded_file.name]
+        st.session_state['generated'] = ["Ask me anything about " + uploaded_file.name]
 
     if 'past' not in st.session_state:
-        st.session_state['past'] = ["Ayo"]
+        st.session_state['past'] = ["Hey chatbot"]
         
     response_container = st.container()
     container = st.container()
